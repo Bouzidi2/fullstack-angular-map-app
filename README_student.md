@@ -1,1 +1,2 @@
-Part C
+Part C: _Customize the HTML user interface for your customer’s application. The user interface should include the shop name, the product names, and the names of the parts._
+Changes for Part C were made in mainscreen.html on lines 14, 19, 40-65, 102-126. Changes were made to the Title tag (My Bike Shop to My Laptop Shop), h1 tag (Shop to Valley's Laptop Shop). For h2 Parts, parts were added and for h2 Products, products were added.
