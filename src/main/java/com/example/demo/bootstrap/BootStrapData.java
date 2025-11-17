@@ -55,9 +55,48 @@ public class BootStrapData implements CommandLineRunner {
 
         System.out.println(thePart.getCompanyName());
         */
-        List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
-        for(OutsourcedPart part:outsourcedParts){
-            System.out.println(part.getName()+" "+part.getCompanyName());
+        outsourcedPartRepository.deleteAll();
+        partRepository.deleteAll();
+        productRepository.deleteAll();
+
+
+
+        if (outsourcedPartRepository.count() == 0) {
+
+            OutsourcedPart a = new OutsourcedPart();
+            a.setCompanyName("Valley's Laptop Shop");
+            a.setName("CPU");
+            a.setInv(5);
+            a.setPrice(150.00);
+            outsourcedPartRepository.save(a);
+
+            OutsourcedPart b = new OutsourcedPart();
+            b.setCompanyName("Valley's Laptop Shop");
+            b.setName("CPU Cooler");
+            b.setInv(15);
+            b.setPrice(45.00);
+            outsourcedPartRepository.save(b);
+
+            OutsourcedPart c = new OutsourcedPart();
+            c.setCompanyName("Valley's Laptop Shop");
+            c.setName("Motherboard");
+            c.setInv(8);
+            c.setPrice(180.00);
+            outsourcedPartRepository.save(c);
+
+            OutsourcedPart d = new OutsourcedPart();
+            d.setCompanyName("Valley's Laptop Shop");
+            d.setName("Memory");
+            d.setInv(30);
+            d.setPrice(70.00);
+            outsourcedPartRepository.save(d);
+
+            OutsourcedPart e = new OutsourcedPart();
+            e.setCompanyName("Valley's Laptop Shop");
+            e.setName("Storage");
+            e.setInv(25);
+            e.setPrice(90.00);
+            outsourcedPartRepository.save(e);
         }
 
         /*
@@ -66,6 +105,20 @@ public class BootStrapData implements CommandLineRunner {
         productRepository.save(bicycle);
         productRepository.save(unicycle);
         */
+
+        Product businessLaptop = new Product("Business Laptop", 1200.00, 5);
+        Product gamingLaptop = new Product("Gaming Laptop", 2000.00, 7);
+        Product ruggedLaptop = new Product("Rugged Laptop", 1800.00, 4);
+        Product workstationLaptop = new Product("Workstation Laptop", 2500.00, 3);
+        Product ultraportables = new Product("Ultraportables", 999.00, 10);
+
+        productRepository.save(businessLaptop);
+        productRepository.save(gamingLaptop);
+        productRepository.save(ruggedLaptop);
+        productRepository.save(workstationLaptop);
+        productRepository.save(ultraportables);
+
+
 
         System.out.println("Started in Bootstrap");
         System.out.println("Number of Products"+productRepository.count());
