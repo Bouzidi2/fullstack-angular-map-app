@@ -8,3 +8,8 @@ Controller class was added for the About page to create a path to it.
 -
 Part E: Removed Names, Prices, and Inventory counts from mainscreen.html Parts and Products tables. Added deleteALl statements for outsourcedPartRepository, partRepository, and productRepository on lines 58-60.
 Added Outsourced Parts on lines 64-100. Added products on lines 109-119.
+
+Part F: Added <div> element in mainscreen.html to display success/failure message for purchasing products - lines 24-26.
+Added <td> element to include <form> element in mainscreen.html to create button for Buy Now. - Lines 98-103.
+Created BuyProductController in controllers folder to accept POST request from html, read productID and use ProductRepository to find the product. This controller decreases inventory value by one when product
+is purchased and generates successful purchase message on mainscreen. Will produce failure message if inventory = 0. Added lines 3-43 in BuyProductController.java.

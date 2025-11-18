@@ -20,6 +20,11 @@
     <a href="About.html">ABOUT</a>
 
 </nav>
+
+<div th:if="${message}" class="alert alert-info" role="alert">
+    <span th:text="${message}"></span>
+</div>
+
 <div class="container">
     <h1>Valley's Laptop Shop</h1>
     <hr>
@@ -88,6 +93,13 @@
             <td><a th:href="@{/showProductFormForUpdate(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
                 <a th:href="@{/deleteproduct(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3"
                    onclick="if(!(confirm('Are you sure you want to delete this product?')))return false">Delete</a>
+            </td>
+
+            <td>
+                <form th:action="@{/buyProduct}" method="POST" style="display:inline;">
+                    <input type="hidden" name="productID" th:value="${tempProduct.id}">
+                    <button type="submit" class="btn btn-success">Buy Now</button>
+                </form>
             </td>
         </tr>
         </tbody>
