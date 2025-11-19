@@ -9,7 +9,24 @@ Controller class was added for the About page to create a path to it.
 Part E: Removed Names, Prices, and Inventory counts from mainscreen.html Parts and Products tables. Added deleteALl statements for outsourcedPartRepository, partRepository, and productRepository on lines 58-60.
 Added Outsourced Parts on lines 64-100. Added products on lines 109-119.
 
-Part F: Added <div> element in mainscreen.html to display success/failure message for purchasing products - lines 24-26.
-Added <td> element to include <form> element in mainscreen.html to create button for Buy Now. - Lines 98-103.
+Part F: Added 'div' element in mainscreen.html to display success/failure message for purchasing products - lines 24-26.
+Added 'td' element to include 'form' element in mainscreen.html to create button for Buy Now. - Lines 98-103.
 Created BuyProductController in controllers folder to accept POST request from html, read productID and use ProductRepository to find the product. This controller decreases inventory value by one when product
 is purchased and generates successful purchase message on mainscreen. Will produce failure message if inventory = 0. Added lines 3-43 in BuyProductController.java.
+
+Part G:
+1. In Part.java I added two variables int minInv and int maxInv on lines 31-34. In same file, I used IJ to autogenerate getter and setter for both variables on lines 90-104.
+2. In mainscreen.html lines 48-49 I added table headers for max and min inventory. In same file, I added table value entry points for min and max inventory, lines 58-59.
+3. In BootStrapData.java I included max and min fields by adding lines 71-72, 80-81, 89-90, 98-99, 107-108. 
+4. In application.properties line 6 I renamed file persistent storage is saved to. Named it BouzidiDatabase_v2. The number after v beyond the underscore is subject to change to refresh database. 
+5. In OutsourcedPartForm.html I added lines for setting additional text inputs for min and max values - lines 27-31. In same file I added to paragraph elements names to describe each line for updating parts.
+Lines 17, 19, 22, 25, 27, and 30. 
+6. Created validator class called InventoryValidator and its associated interface ValidInventory.
+7. Changed line 16 in ValidInventory to name the appropriate class. Changed string message on line 20.
+8. In InventoryValidator I changed line 19 to reference ValidInventory. Product was changed to Part. Similar change to line 27. Deleted lines 30-40 and commented out line 25.
+9. In InventoryValidator.java added an if statement to check inventory doesn't exceed max inventory. Included string message to be displayed if error occurs. Lines 34-38.
+10. To Part Class line 23, added annotation for ValidInventory
+11. In OutsourcedPartsForm I added div tag to check for errors when going over max inventory. Lines 33-42. Also added ul tag and li tag within div to list errors on screen when they occur.
+12. In OutsourcedPartsForm added another if statement to check inventory doesn't go below min inventory. 
+13. Changed BouzidiDatabase_vx in application.properties line 6 numerous times to refresh database. Currently it is BouzidiDatabase_v9.
+
