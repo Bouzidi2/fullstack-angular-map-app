@@ -30,3 +30,6 @@ Lines 17, 19, 22, 25, 27, and 30.
 12. In OutsourcedPartsForm added another if statement to check inventory doesn't go below min inventory. 
 13. Changed BouzidiDatabase_vx in application.properties line 6 numerous times to refresh database. Currently it is BouzidiDatabase_v9.
 
+Part E edit: Edit necessary to add id field to Outsourced Parts page. In BootStrapData.java I added an id field on lines 71, 81, 91, 101, and 111.
+In mainscreen.html I added an ID header on line 48. In OutsourcedPartForm line 27-28 I added a p tag to include ID.
+
