@@ -29,10 +29,10 @@ public class InventoryValidator implements ConstraintValidator<ValidInventory, P
     @Override
     public boolean isValid(Part part, ConstraintValidatorContext constraintValidatorContext) {
 
+
         //Code ensuring inventory is between min and max
 
         if (part.getInv() > part.getMaxInv()) {
-
             constraintValidatorContext.buildConstraintViolationWithTemplate("Make sure your Inventory isn't greater than the Max").addConstraintViolation();
             return false;
         }

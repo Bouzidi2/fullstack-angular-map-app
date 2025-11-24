@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-<html xmlns:th="https://www.thymeleaf.org">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +9,14 @@
 </head>
 <body>
 <h1>Product Detail</h1>
-<form action="#" th:action="@{/showFormAddProduct}" th:object="${product}" method="POST"}>
+
+<form action="#" th:action="@{/showFormAddProduct}" th:object="${product}" method="POST">
+
+    <div th:if="${#fields.hasGlobalErrors()}" class="alert alert-danger">
+        <ul>
+            <li th:each="err : ${#fields.globalErrors()}" th:text="${err}"></li>
+        </ul>
+    </div>
     <!-- Add hidden form field to handle update -->
     <p><input type="hidden" th:field="*{id}"/></p>
 
@@ -21,11 +27,11 @@
 
     <p><input type="text" th:field="*{inv}" placeholder="Inventory" class="form-control mb-4 col-4"/></p>
 
-    <p>
     <div th:if="${#fields.hasAnyErrors()}">
-    <ul><li th:each="err: ${#fields.allErrors()}" th:text="${err}"></li></ul>
+         <ul>
+             <li th:each="err: ${#fields.allErrors()}" th:text="${err}"></li>
+        </ul>
     </div>
-    </p>
     <p><input type="submit" value="Submit" /></p>
 </form>
 

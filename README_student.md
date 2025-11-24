@@ -26,10 +26,20 @@ Lines 17, 19, 22, 25, 27, and 30.
 8. In InventoryValidator I changed line 19 to reference ValidInventory. Product was changed to Part. Similar change to line 27. Deleted lines 30-40 and commented out line 25.
 9. In InventoryValidator.java added an if statement to check inventory doesn't exceed max inventory. Included string message to be displayed if error occurs. Lines 34-38.
 10. To Part Class line 23, added annotation for ValidInventory
-11. In OutsourcedPartsForm I added div tag to check for errors when going over max inventory. Lines 33-42. Also added ul tag and li tag within div to list errors on screen when they occur.
+11. (Part H) In OutsourcedPartsForm I added div tag to check for errors when going over max inventory. Lines 33-42. Also added ul tag and li tag within div to list errors on screen when they occur.
 12. In OutsourcedPartsForm added another if statement to check inventory doesn't go below min inventory. 
 13. Changed BouzidiDatabase_vx in application.properties line 6 numerous times to refresh database. Currently it is BouzidiDatabase_v9.
 
 Part E edit: Edit necessary to add id field to Outsourced Parts page. In BootStrapData.java I added an id field on lines 71, 81, 91, 101, and 111.
 In mainscreen.html I added an ID header on line 48. In OutsourcedPartForm line 27-28 I added a p tag to include ID.
-
+ 
+Part H + Edits: In EnufPartsValidator line 39, I added code for additional inventory that is requested. Same file, line 40 and lines 42-48 I added an if statement block and replaced original one to correctly check whether updating 
+a product would force a part's inventory is below its minimum.
+In productForm.html lines 13-17 I added a div tag to properly display error message on product form. 
+- I put in an edit in the annotation for Part G #11 to add that I completed a task from Part H while I was completing Part G.
+  (Edits)
+- In InhousePartForm.html I removed a '}' from line 11. Performed same edit in productForm.html on line 18.
+- changed BouzidiDatabase_vx in application.properties to version 12
+- In productForm.html on lines 29 and 35 I removed opening and closing p tags.
+- Also in productForm.html I moved lines 13-17 down to lines 15-19 essentially putting the div block inside the form block that begins on line 13.
+- changed BouzidiDatabase_vx in application.properties to version 13.
