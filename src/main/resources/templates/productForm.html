@@ -17,7 +17,7 @@
             <li th:each="err : ${#fields.globalErrors()}" th:text="${err}"></li>
         </ul>
     </div>
-    <!-- Add hidden form field to handle update -->
+
     <p><input type="hidden" th:field="*{id}"/></p>
 
     <p><input type="text" th:field="*{name}" placeholder="Name" class="form-control mb-4 col-4"/></p>

@@ -26,7 +26,7 @@ Lines 17, 19, 22, 25, 27, and 30.
 8. In InventoryValidator I changed line 19 to reference ValidInventory. Product was changed to Part. Similar change to line 27. Deleted lines 30-40 and commented out line 25.
 9. In InventoryValidator.java added an if statement to check inventory doesn't exceed max inventory. Included string message to be displayed if error occurs. Lines 34-38.
 10. To Part Class line 23, added annotation for ValidInventory
-11. (Part H) In OutsourcedPartsForm I added div tag to check for errors when going over max inventory. Lines 33-42. Also added ul tag and li tag within div to list errors on screen when they occur.
+11. (Part H) In OutsourcedPartsForm I added div tag to show errors when going over max inventory. Lines 33-42. Also added ul tag and li tag within div to list errors on screen when they occur.
 12. In OutsourcedPartsForm added another if statement to check inventory doesn't go below min inventory. 
 13. Changed BouzidiDatabase_vx in application.properties line 6 numerous times to refresh database. Currently it is BouzidiDatabase_v9.
 
@@ -42,4 +42,11 @@ In productForm.html lines 13-17 I added a div tag to properly display error mess
 - changed BouzidiDatabase_vx in application.properties to version 12
 - In productForm.html on lines 29 and 35 I removed opening and closing p tags.
 - Also in productForm.html I moved lines 13-17 down to lines 15-19 essentially putting the div block inside the form block that begins on line 13.
-- changed BouzidiDatabase_vx in application.properties to version 13.
+- changed BouzidiDatabase_vx in application.properties line 6 to version 13.
+
+Part G Edit: 
+-In InhousePartForm Lines 26-30 I added lines for min and max values. On lines 33-39 I added a div block to list errors on screen when they occur.
+Deleted line 24 because it caused confusion with auto generated IDs.
+- In mainscreen.html I added line 59 to correct ID field in Parts table so it shows all part IDs.
+- In InhousePartForm on lines 16, 18, and 21 I added names for each input box within the associated p tags.  
+- In application.properties line 6 I changed BouzidiDatabse_vx to what is now v14.
