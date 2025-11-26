@@ -50,3 +50,6 @@ Deleted line 24 because it caused confusion with auto generated IDs.
 - In mainscreen.html I added line 59 to correct ID field in Parts table so it shows all part IDs.
 - In InhousePartForm on lines 16, 18, and 21 I added names for each input box within the associated p tags.  
 - In application.properties line 6 I changed BouzidiDatabse_vx to what is now v14.
+
+Part I: 
+In PartTest.java I added 2 unit tests for the maximum and minimum fields. Lines 160-167 for testMinInv and lines 169-177 for testMaxInv.
