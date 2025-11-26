@@ -6,15 +6,22 @@ Changes for Part D include adding an About.html file and AboutController file. I
 A header and div were added to describe the company's service to its customers. A navigation bar was added to mainscreen.html on lines 19-22. The link reference to the About page was added here. 
 Controller class was added for the About page to create a path to it. 
 -
-Part E: Removed Names, Prices, and Inventory counts from mainscreen.html Parts and Products tables. Added deleteALl statements for outsourcedPartRepository, partRepository, and productRepository on lines 58-60.
+Part E: Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
+Removed Names, Prices, and Inventory counts from mainscreen.html Parts and Products tables. Added deleteALl statements for outsourcedPartRepository, partRepository, and productRepository on lines 58-60.
 Added Outsourced Parts on lines 64-100. Added products on lines 109-119.
 
-Part F: Added 'div' element in mainscreen.html to display success/failure message for purchasing products - lines 24-26.
+Part F: Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
+Added 'div' element in mainscreen.html to display success/failure message for purchasing products - lines 24-26.
 Added 'td' element to include 'form' element in mainscreen.html to create button for Buy Now. - Lines 98-103.
 Created BuyProductController in controllers folder to accept POST request from html, read productID and use ProductRepository to find the product. This controller decreases inventory value by one when product
 is purchased and generates successful purchase message on mainscreen. Will produce failure message if inventory = 0. Added lines 3-43 in BuyProductController.java.
 
-Part G:
+Part G:Modify the parts to track maximum and minimum inventory by doing the following:
+•  Add additional fields to the part entity for maximum and minimum inventory.
+•  Modify the sample inventory to include the maximum and minimum fields.
+•  Add to the InhousePartForm and OutsourcedPartForm forms additional text inputs for the inventory so the user can set the maximum and minimum values.
+•  Rename the file the persistent storage is saved to.
+•  Modify the code to enforce that the inventory is between or at the minimum and maximum value.
 1. In Part.java I added two variables int minInv and int maxInv on lines 31-34. In same file, I used IJ to autogenerate getter and setter for both variables on lines 90-104.
 2. In mainscreen.html lines 48-49 I added table headers for max and min inventory. In same file, I added table value entry points for min and max inventory, lines 58-59.
 3. In BootStrapData.java I included max and min fields by adding lines 71-72, 80-81, 89-90, 98-99, 107-108. 
@@ -30,10 +37,15 @@ Lines 17, 19, 22, 25, 27, and 30.
 12. In OutsourcedPartsForm added another if statement to check inventory doesn't go below min inventory. 
 13. Changed BouzidiDatabase_vx in application.properties line 6 numerous times to refresh database. Currently it is BouzidiDatabase_v9.
 
-Part E edit: Edit necessary to add id field to Outsourced Parts page. In BootStrapData.java I added an id field on lines 71, 81, 91, 101, and 111.
+Part E edit: 
+Edit necessary to add id field to Outsourced Parts page. In BootStrapData.java I added an id field on lines 71, 81, 91, 101, and 111.
 In mainscreen.html I added an ID header on line 48. In OutsourcedPartForm line 27-28 I added a p tag to include ID.
  
-Part H + Edits: In EnufPartsValidator line 39, I added code for additional inventory that is requested. Same file, line 40 and lines 42-48 I added an if statement block and replaced original one to correctly check whether updating 
+Part H + Edits: Add validation for between or at the maximum and minimum fields. The validation must include the following:
+•  Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts.
+•  Display error messages for low inventory when adding and updating products lowers the part inventory below the minimum.
+•  Display error messages when adding and updating parts if the inventory is greater than the maximum.
+In EnufPartsValidator line 39, I added code for additional inventory that is requested. Same file, line 40 and lines 42-48 I added an if statement block and replaced original one to correctly check whether updating 
 a product would force a part's inventory is below its minimum.
 In productForm.html lines 13-17 I added a div tag to properly display error message on product form. 
 - I put in an edit in the annotation for Part G #11 to add that I completed a task from Part H while I was completing Part G.
@@ -51,8 +63,12 @@ Deleted line 24 because it caused confusion with auto generated IDs.
 - In InhousePartForm on lines 16, 18, and 21 I added names for each input box within the associated p tags.  
 - In application.properties line 6 I changed BouzidiDatabse_vx to what is now v14.
 
-Part I: 
+Part I: Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
+
 In PartTest.java I added 2 unit tests for the maximum and minimum fields. Lines 160-167 for testMinInv and lines 169-177 for testMaxInv.
 
 Part J:Remove the class files for any unused validators in order to clean your code.
 Deleted file DeletePartValidator under validators because it had no usages. 
+
+Final Edit: Added prompts to Part updates in this file that did not have prompts upon initial push. 
+In application.properties I changed line 6 BouzidiDataBase_v14 to v15.
