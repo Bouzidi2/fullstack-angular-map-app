@@ -72,3 +72,4 @@ Deleted file DeletePartValidator under validators because it had no usages.
 
 Final Edit: Added prompts to Part updates in this file that did not have prompts upon initial push. 
 In application.properties I changed line 6 BouzidiDataBase_v14 to v15.
+In EnufPartsValidator corrected spelling error on line 45. 

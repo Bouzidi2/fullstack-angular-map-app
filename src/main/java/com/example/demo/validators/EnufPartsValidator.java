@@ -42,7 +42,7 @@ public class EnufPartsValidator implements ConstraintValidator<ValidEnufParts, P
                     if (p.getInv() - difference < p.getMinInv()) {
                         constraintValidatorContext.disableDefaultConstraintViolation();
                         constraintValidatorContext.buildConstraintViolationWithTemplate(
-                                "Not enough part inventory: " + p.getName() +
+                                "Not enough parts inventory: " + p.getName() +
                                         " would go below its minimum."
                         ).addConstraintViolation();
                         return false;
