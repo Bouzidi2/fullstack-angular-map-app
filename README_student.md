@@ -53,3 +53,6 @@ Deleted line 24 because it caused confusion with auto generated IDs.
 
 Part I: 
 In PartTest.java I added 2 unit tests for the maximum and minimum fields. Lines 160-167 for testMinInv and lines 169-177 for testMaxInv.
+
+Part J:Remove the class files for any unused validators in order to clean your code.
+Deleted file DeletePartValidator under validators because it had no usages. 
